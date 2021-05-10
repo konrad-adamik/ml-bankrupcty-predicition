@@ -77,6 +77,7 @@ plt.legend(loc="lower right")
 plt.show()
 
 # Visualize decision tree into the file
-dot_data = tree.export_graphviz(decision_tree, out_file=None, filled=True)
+dot_data = tree.export_graphviz(decision_tree, feature_names=data.columns[1:],
+                                class_names=["Not bankrupt", "Bankrupt"], out_file=None, filled=True)
 graph = graphviz.Source(dot_data, format="png")
 graph.render("result/decision_tree")
