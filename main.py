@@ -25,7 +25,7 @@ training_data, testing_data, training_target, testing_target = \
     train_test_split(dataset, target.reshape(-1, 1), test_size=0.2, random_state=1)
 
 # Create and fit the decision tree
-decision_tree = tree.DecisionTreeClassifier(criterion='entropy', max_depth=10)
+decision_tree = tree.DecisionTreeClassifier(criterion='gini', max_depth=10)
 decision_tree = decision_tree.fit(training_data, training_target)
 
 # Evaluation metrics for decision tree
